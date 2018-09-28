@@ -1,0 +1,116 @@
+<div class="container-fluid outer">
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-10">
+            <mat-tab-group>
+                <mat-tab label="Outdoor View">
+                    <agm-map [latitude]="9.318327499999999" [longitude]="76.61108450000006" [zoom]=14.5>
+                        <!-- <agm-marker *ngFor="let marker of marker" [latitude]="marker.lattitude" [longitude]="marker.longitude"> </agm-marker> -->
+                        <agm-marker [latitude]="9.318327499999999" [longitude]="76.61108450000006" [label]="labelOptions"></agm-marker>
+
+                        <agm-circle *ngFor="let data of circle" [latitude]="data.lat" [longitude]="data.lng" [circleDraggable]="false" [editable]="false" [radius]="data.radius" [strokePosition]="0" [strokeWeight]="2" [strokeColor]="'#706bd6'" [fillOpacity]="0">
+                        </agm-circle>
+                        <agm-polyline [visible]="true" [strokeWeight]="3" [strokeColor]="'green'">
+                            <agm-polyline-point *ngFor="let coordinate of coordinates; let i=index" [latitude]="coordinate.lat" [longitude]="coordinate.lng">
+
+                            </agm-polyline-point>
+                        </agm-polyline>
+                        <agm-polyline [visible]="true" [strokeWeight]="3" [strokeColor]="'green'">
+                            <agm-polyline-point *ngFor="let coordinate of coordinates1; let i=index" [latitude]="coordinate.lat" [longitude]="coordinate.lng">
+
+                            </agm-polyline-point>
+                        </agm-polyline>
+                        <agm-polyline [visible]="true" [strokeWeight]="3" [strokeColor]="'grey'">
+                            <agm-polyline-point *ngFor="let coordinate of coordinates2; let i=index" [latitude]="coordinate.lat" [longitude]="coordinate.lng">
+
+                            </agm-polyline-point>
+                        </agm-polyline>
+                        <agm-marker *ngFor="let marker of marker" [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="'/assets/hosp.png'"></agm-marker>
+                        <agm-marker *ngFor="let marker of marker1" [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="'/assets/cross.png'" [label]="labelOptions2"></agm-marker>
+                        <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="'/assets/AvailableHosp.png'"></agm-marker>
+                        <agm-marker *ngFor="let marker of trucks" [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="'/assets/truck.png'"></agm-marker>
+                    </agm-map>
+                </mat-tab>
+                <mat-tab label="Indoor View">
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <mat-card class="col-sm-4 first">
+                                <span class="heading">Camp wise count</span>
+                                <button mat-raised-button style="float:right" (click)="openDialog()">View More</button>
+                                <hr>
+                                <mat-list role="list">
+                                    <mat-list-item role="listitem">Total rescued : <span class="data">589</span></mat-list-item>
+                                    <mat-list-item role="listitem">Injured/Not well : <span class="data">234</span></mat-list-item>
+                                    <mat-list-item role="listitem">Healthy : <span class="data">355</span></mat-list-item>
+                                    <mat-list-item role="listitem">Missing : <span class="data">176</span></mat-list-item>
+                                </mat-list>
+                            </mat-card>
+                            <mat-card class="col-sm-4">
+                                <span class="heading">Medical Aid</span>
+                                <button mat-raised-button style="float:right" (click)="openDialog()">View More</button>
+                                <hr>
+                                <mat-list role="list">
+                                    <mat-list-item role="listitem">Available Doctors : <span class="data">23</span></mat-list-item>
+                                    <mat-list-item role="listitem">Available Interns : <span class="data">41</span></mat-list-item>
+                                    <mat-list-item role="listitem">First aid kits : <span class="data">400 kits</span></mat-list-item>
+                                    <mat-list-item role="listitem">Additional medicines/devices : <span class="data">120 sets</span></mat-list-item>
+                                </mat-list>
+                            </mat-card>
+                            <mat-card class="col-sm-4">
+                                <span class="heading">Camp Supplies</span>
+                                <hr>
+                                <mat-list role="list">
+                                    <mat-list-item role="listitem">Food packets : <span class="data">1250 packets</span></mat-list-item>
+                                    <mat-list-item role="listitem">Drinking water : <span class="data">560 bottles</span></mat-list-item>
+                                    <mat-list-item role="listitem">Clothes : <span class="data">350 pairs</span></mat-list-item>
+                                    <mat-list-item role="listitem">Additional supplies : <span class="data">140 sets</span></mat-list-item>
+                                </mat-list>
+                            </mat-card>
+                        </div>
+                        <div class="row">
+                            <mat-card class="col-sm-4 first">
+                                <span class="heading">Connectivity</span>
+                                <hr>
+                                <mat-list role="list">
+                                    <mat-list-item role="listitem">Total containers : <span class="data">5</span></mat-list-item>
+                                    <mat-list-item role="listitem">In transit/Active containers : <span class="data">3</span></mat-list-item>
+                                    <mat-list-item role="listitem">Available containers : <span class="data">2</span></mat-list-item>
+                                    <mat-list-item role="listitem">Network connectivity : <span class="data">Moderate</span></mat-list-item>
+                                </mat-list>
+                            </mat-card>
+                            <mat-card class="col-sm-4">
+                                <span class="heading">Live streaming</span>
+                                <button mat-raised-button style="float:right" (click)="openStreaming()">View More</button>
+                                <hr>
+                                <div>
+                                    <video controls autoplay loop>
+                                    <source src="assets/floodVideo.mp4" media="all and (max-width:200px)" type="video/mp4">
+                                  </video>
+                                </div>
+                            </mat-card>
+                            <mat-card class="col-sm-4">
+                                <span class="heading">Associations & Funds</span>
+                                <button mat-raised-button style="float:right" (click)="openAssociations()">View More</button>
+                                <hr>
+                                <span class="sub-heading">1. Government based</span>
+                                <mat-list role="list">
+                                    <mat-list-item role="listitem">Central govt : <span class="data">5000000 INR</span></mat-list-item>
+                                    <mat-list-item role="listitem">State govt : <span class="data">3000000 INR</span></mat-list-item>
+                                </mat-list>
+                                <span class="sub-heading">2. NGOs</span>
+
+                                <mat-list role="list">
+                                    <mat-list-item role="listitem">Paytm/Amazon : <span class="data">25000000 INR</span></mat-list-item>
+                                    <mat-list-item role="listitem">Soch/WeKare : <span class="data">12000000 INR</span></mat-list-item>
+                                </mat-list>
+                            </mat-card>
+                        </div>
+                    </div>
+                </mat-tab>
+
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

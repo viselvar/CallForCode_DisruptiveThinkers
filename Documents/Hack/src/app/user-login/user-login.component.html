@@ -1,0 +1,19 @@
+
+
+<div id="back" class="col-sm-12" >
+<mat-card class="login elevation-z6">
+      <div class="form_container">
+  <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
+      <mat-form-field class="username">
+          <input matInput placeholder="Username" formControlName="uname" autofocus >
+        </mat-form-field>
+      
+        <mat-form-field class="username">
+          <input type="password" matInput placeholder="Password"formControlName="passwd"autofocus>
+        </mat-form-field>
+        <div class="button-row">
+          <button mat-button color="primary">Login</button></div>
+        </form>
+</div>
+</mat-card>
+</div>

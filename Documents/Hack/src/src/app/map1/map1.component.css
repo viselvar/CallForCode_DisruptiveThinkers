@@ -1,0 +1,59 @@
+agm-map {
+    height: 500px;
+}
+
+.row {
+    padding: 0.5%;
+}
+
+.col-sm-3 {
+    margin: 1%;
+    text-align: center;
+}
+
+.first {
+    margin-left: 10%;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(67, 112, 112);
+}
+
+.mat-card {
+    padding: 5px;
+}
+
+video {
+    height: 215px;
+}
+
+.data {
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(67, 112, 112);
+}
+
+.data:hover {
+    font-size: 20px;
+    color: darkslategray;
+}
+
+.cdk-overlay-pane {
+    width: 1000px;
+    margin-left: 12%;
+    position: absolute;
+    height: 57%;
+    margin-top: 12%;
+}
+
+.mat-raised-button {
+    font-size: 15px;
+    margin-left: 7.5%;
+    /* width: 10px; */
+    border-radius: 5px;
+    font-weight: 500;
+    color: rgb(67, 112, 112);
+    cursor: pointer;
+}

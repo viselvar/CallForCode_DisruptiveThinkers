@@ -1,0 +1,15 @@
+<div class="agmMap">
+    <agm-map [latitude]="centerLat" [longitude]="centerLng" [zoom]="zoom">
+        <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+            <div *ngFor="let marker of markers">
+                <agm-marker (markerClick)="showMarkerInfo(marker)" [latitude]="marker.lat" [longitude]="marker.lng" [title]="marker.title" [id]="marker.id">
+                </agm-marker>
+            </div>
+        </agm-marker-cluster>
+        <div *ngFor="let data of circle">
+            <agm-circle [latitude]="data.lat" [longitude]="data.lng" [circleDraggable]="false" [editable]="false" [fillColor]="data.color" [radius]="data.radius" [strokePosition]="0" [strokeWeight]="2" [strokeColor]="'#FF1313'" [fillOpacity]="0.5">
+            </agm-circle>
+        </div>
+    </agm-map>
+
+</div>

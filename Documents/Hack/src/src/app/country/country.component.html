@@ -1,0 +1,66 @@
+    <h2>Associate Form</h2>
+    <div class="container" align="center">             
+     <table class="table table-bordered" id="tableId">      
+      <tbody>
+      <tr>
+        <td ><b>Select Country</b></td>
+        <td ><div class="dropdown">
+            <select id="mySelect" *ngIf="getCountries()" [(ngModel)]="selectedCountry" (change)="onSelectCountry($event.target.value)" class="input-text" >
+                <option value="0">--Select Country--</option>
+                <option *ngFor="let country of getCountries()" value = {{country.id}}>{{country.name}}</option>
+              </select>
+            </div>  
+        </td>       
+      </tr>
+
+      <tr>
+        <td><b>Select State</b></td>
+        <td><div class="dropdown">
+            <select id="mySelect" *ngIf="getStates()" [(ngModel)]="selectedState" (change)="onSelectState($event.target.value)" class="input-text" >
+                <option value="0">--Select State--</option>
+                <option *ngFor="let state of States" value={{state.id}}>{{state.name}}</option>
+              </select>
+            </div>
+        </td>
+      </tr>
+
+      <tr>
+          <td><b>Select Association Name</b></td>
+          <td><div class="dropdown">
+              <select id="mySelect1" *ngIf="getAnames()" [(ngModel)]="selectedAname" (change)="onselectAname($event.target.value)" class="input-text" >
+                  <option value="0">--Select Association Name--</option>
+                  <option *ngFor="let Aname of ANames" value={{Aname.id}}>{{Aname.name}}</option>
+                </select>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+            <td><b>Select Organization Type</b></td>
+            <td><form>
+                <label class="radio-inline">
+                <input type="radio" name="optradio" checked>Government
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio">Non-Government
+            </label>
+          </form>
+          </tr>
+
+          <tr>
+              <td><b>Status of the Organization</b></td>
+              <td><form>
+                  <label class="radio-inline">
+                  <input type="radio" name="optradio" checked>Active
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="optradio">Inactive
+              </label>
+            </form>
+            </tr>
+
+           
+    </tbody>
+   </table>
+   <button type="button" class="btn btn-outline-success">Verify</button>
+  </div>

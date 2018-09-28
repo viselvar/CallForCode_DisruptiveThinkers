@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row">
+        <div style="height:315px;     padding: 0%;    padding-top: 2px !important;" class="col-sm-3 dashboardCards" id="list">
+            <div class="heading">
+                Active Disasters<br>
+            </div>
+            <hr>
+            <mat-list  role="list" class="groupList">
+                <!-- <mat-list-item *ngFor="let states of stateList" class="listItems" role="listitem">{{states.stateDescription}}</mat-list-item> -->
+                <mat-list-item class="listItems" role="listitem">Kerela flood</mat-list-item>
+                <mat-list-item class="listItems" role="listitem"> Gujarat flood </mat-list-item>
+                <mat-list-item class="listItems" role="listitem">Peninsular flood</mat-list-item>
+                <mat-list-item class="listItems" role="listitem">Sumatra flood</mat-list-item>
+                <mat-list-item class="listItems" role="listitem">Balochistan flood</mat-list-item>
+                <mat-list-item class="listItems" role="listitem">Khyber flood</mat-list-item>
+                <mat-list-item class="listItems" role="listitem">Pakhtunkhwa flood</mat-list-item>
+                <mat-list-item class="listItems" role="listitem">Southern Punjab flood</mat-list-item>
+
+            </mat-list>
+        </div>
+
+        <div class="col-sm-5 dashboardCards" id="bubbleChart">
+
+            <div style="height:315px;" [chart]="chart"></div>
+        </div>
+
+        <div class="col-sm-3 dashboardCards" id="barChart">
+            <div style="height:315px;" [chart]="peopleChart"></div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="showMap">
+        <div class="col-sm-12">
+            <div class="map">
+                <div class="heading">
+                    Map View
+                    <hr>
+                </div>
+                <app-state-map class="mapDiv"></app-state-map>
+                <h5><a class="anchor" (click)="openFeedback()">Click here</a> to provide feedback</h5>
+            </div>
+        </div>
+    </div>
+</div>

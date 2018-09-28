@@ -1,0 +1,20 @@
+<div>
+        <div class="dropdown">
+            <span ><b>Select Location : </b></span>
+            <select text id="mySelect" *ngIf="getLocations()" [(ngModel)]="selectedLocation" (change)="onSelectLocation($event.target.value)"
+                class="Input-text">
+                <option value="0">Select Location</option>
+                <option *ngFor="let Location of getLocations()" value={{Location.id}}>{{Location.name}}</option>
+            </select>
+        </div>
+        <br>
+        
+        <div class="dropdown">
+            <span ><b>Select Campus Details:</b></span>
+            <select id="mySelect1" *ngIf="Campdetails" [(ngModel)]="selectedCampdetail" (change)="onSelectCampdetail($event.target.value)"
+                class="Input-text">
+                <option value="0">Select campdetails</option>
+                <option *ngFor="let Campdetail of Campdetails" value={{Campdetail.id}}>{{Campdetail.name}}</option>
+            </select>
+        </div>
+    </div>

@@ -1,0 +1,37 @@
+mat-grid-tile {
+    height: 565px;
+    background-color: #e6dbdb !important;
+}
+
+.titleHead {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.container {
+    width: 40%;
+    margin-top: -10%;
+}
+
+.formField {
+    width: 95%;
+    margin-left: 2%;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 40%;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+h5 {
+    text-align: center;
+}

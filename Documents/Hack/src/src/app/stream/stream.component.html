@@ -1,0 +1,19 @@
+<h5>Regional Transalator</h5><br>
+
+<mat-form-field>
+    <input id="singleFile" type="file" />
+</mat-form-field>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<mat-form-field class="username">
+    <button mat-button color="primary" (click)="Submitedfile(singleFile)">Convert</button>
+</mat-form-field>
+<br>
+<mat-form-field class="username">
+    <input matInput placeholder="Enter text here" [(ngModel)]="input" autofocus [value]="input">
+</mat-form-field>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<mat-form-field class="username">
+    <input matInput placeholder="Text convertor" [(ngModel)]="output" autofocus>
+</mat-form-field>
+<div class="button-row">
+    <button mat-button color="primary" (click)="transulaeSubmit(input)">Transulate</button></div>

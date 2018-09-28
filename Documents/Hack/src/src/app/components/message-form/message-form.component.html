@@ -1,0 +1,27 @@
+<div class="chatform">
+    <div class="chatlist" #chatlist>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <img [src]="netImage" alt="sdf" class="avatar" />
+                <span class="message">
+                    What you want
+                </span>
+            </li>
+        </ul>
+        <ul class="list-group" *ngFor="let i of data">
+            <li class="list-group-item">
+                <img [src]="i.img" alt="sdf " class="avatar " />
+                <span class="message ">
+                    {{i.message}}
+                </span>
+                <div class="timeform ">
+                    <i class="fa fa-clock-o " aria-hidden="true "></i> <span class="timestamp ">at {{i.timing}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="chatcontrol ">
+        <input type="text " class="form-control chatinput " (keyup.enter)="sendMessage(message) " [(ngModel)]="message " />
+        <button class="btn btn-success sendbtn " (click)="sendMessage(message) ">Send</button>
+    </div>
+</div>

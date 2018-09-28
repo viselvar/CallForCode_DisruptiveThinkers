@@ -1,0 +1,45 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+    <mat-grid-tile>
+        <mat-card class="container">
+            <mat-card-header>
+                <mat-card-title><span class="titleHead">Donate Here</span></mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <br>
+                <p>
+                    <mat-form-field class="formField">
+                        <mat-select placeholder="Association"  [(ngModel)]="groupDetails" >
+                            <mat-optgroup *ngFor="let group of associationGroups"   [label]="group.name" [disabled]="group.disabled">
+                                <mat-option *ngFor="let i of group.associate" [value]="i.id" >
+                                    {{i.viewValue}}
+                                    </mat-option>
+                                    </mat-optgroup>
+                                    </mat-select>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field class="formField">
+                        <mat-select placeholder="Donate Via" [(ngModel)]="donateType">
+                            <mat-option *ngFor="let i of application"  [value]="i.id">{{i.viewValue}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field class="formField">
+                        <input matInput placeholder="Amount" [(ngModel)]="donateFunds" type="number" class="example-right-align">
+                        <span matPrefix>INR:&nbsp;</span>
+                        <span matSuffix>.00</span>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <button mat-raised-button color="primary" (click)="donateFund()" >Donate</button>
+                </p>
+                <h5><a  (click)="openDialog()" >Click here</a> for any assistance</h5>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+
